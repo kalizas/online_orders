@@ -2,7 +2,7 @@ package com.example.online_orders.controller;
 
 import com.example.online_orders.exception.NotFoundException;
 import com.example.online_orders.model.MenuModel;
-import com.example.online_orders.servise.UserServise;
+import com.example.online_orders.servise.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserServise adminServise;
+    private UserService adminServise;
 
     @PostMapping("/create/new/post")
     public ResponseEntity<?> addNewFood(@RequestBody MenuModel postModel) {

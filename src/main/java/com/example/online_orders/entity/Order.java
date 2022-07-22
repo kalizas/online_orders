@@ -1,6 +1,5 @@
 package com.example.online_orders.entity;
 
-import com.example.online_orders.model.OrderModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,14 +26,5 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "menu_id", referencedColumnName = "id")
     private Menu menu;
-
-    public OrderModel orModel(){
-        return OrderModel.builder()
-                .id(id)
-                .scheduleTime(scheduleTime)
-                .client(client)
-                .menu(menu)
-                .build();
-    }
 
 }

@@ -1,14 +1,9 @@
 package com.example.online_orders.exception;
 
-public class NotFoundException extends RuntimeException{
-    private String order;
+public class NotFoundException extends RuntimeException {
 
     public NotFoundException(String message) {
-        this.order = order;
+        super(message);
     }
 
-
-    public String getOrderById() {
-        return order;
-    }
 }

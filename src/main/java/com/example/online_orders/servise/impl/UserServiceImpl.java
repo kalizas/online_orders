@@ -7,13 +7,13 @@ import com.example.online_orders.model.MenuModel;
 import com.example.online_orders.model.OrderModel;
 import com.example.online_orders.repository.MenuRepository;
 import com.example.online_orders.repository.OrderRepository;
-import com.example.online_orders.servise.UserServise;
-import lombok.AllArgsConstructor;
+import com.example.online_orders.servise.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
-public class UserServiseimpl implements UserServise {
+@RequiredArgsConstructor
+public class UserServiceImpl implements UserService {
 
     private final OrderRepository orderRepository;
     private final MenuRepository menuRepository;
@@ -21,7 +21,6 @@ public class UserServiseimpl implements UserServise {
     @Override
     public MenuModel addNewFood(MenuModel menuModel) {
         Menu menu = new Menu();
-        menu.setId(menuModel.getId());
         menu.setFoodName(menuModel.getNameFood());
         menu.setPrice(menuModel.getPrice());
         menuRepository.save(menu);
@@ -33,7 +32,7 @@ public class UserServiseimpl implements UserServise {
         Order order = orderRepository
                 .findById(id)
                 .orElseThrow(() -> new NotFoundException("Id: " + id + "не найден"));
-        return order.orModel();
+        return null;
     }
 
     @Override

@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+
 @Slf4j
 @ControllerAdvice
 @RequiredArgsConstructor
 public class ExceptionHandlerConfiguration {
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler
+    (Exception.class)
     public final ResponseEntity<Object> handler(Exception ex, WebRequest request){
         log.error(ex.getMessage(), ex);
 

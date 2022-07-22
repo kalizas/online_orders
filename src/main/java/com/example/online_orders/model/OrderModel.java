@@ -1,7 +1,5 @@
 package com.example.online_orders.model;
 
-import com.example.online_orders.entity.Client;
-import com.example.online_orders.entity.Menu;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -16,8 +14,8 @@ public class OrderModel {
 
     private LocalDateTime scheduleTime;
 
-    private Client client;
+    private ClientModel client;
 
-    private Menu menu;
+    private MenuModel menu;
 
 }

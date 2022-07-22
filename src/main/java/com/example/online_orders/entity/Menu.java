@@ -1,8 +1,5 @@
 package com.example.online_orders.entity;
 
-import com.example.online_orders.model.FilialModel;
-import com.example.online_orders.model.MenuModel;
-import com.example.online_orders.model.OrderModel;
 import lombok.Getter;
 import lombok.Setter;
 
